@@ -1,6 +1,6 @@
 __author__ = 'lego90511'
 from random import randrange
-import sys
+ #I dont remember how I did this
 
 
 class Animation():
@@ -15,6 +15,9 @@ class Animation():
         self.canvas.move(self.creature, 2 * 50, 2 * 50)
 
     def animate(self):
+        #self.canvas.itemconfig(self.land[(0, 0)], text=str(self.ctr))
+        #self.root.after(1000, self.canvas.itemconfig, self.land[(0, 0)], text=str(self.ctr))
+        self.root.after(1000, lambda: self.canvas.itemconfig(self.land[(0, 0)], text=str(self.ctr)))
 
         self.root.after(1000, self.canvas.move, self.creature, self.x * 50, self.y * 50)
         if self.ctr > 0:
