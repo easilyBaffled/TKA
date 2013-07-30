@@ -21,9 +21,10 @@ class Alien(object):
                 color = "black" if cell else "green"
                 self.canvas.create_rectangle(r * i, r * j, r * (i + 1), r * (j + 1),
                                              outline=color, fill=color)
-                self.land[(i, j)] = self.canvas.create_text(r * i, r * j, anchor=NE, fill="white", text="1", tag=str((i, j)))
+                self.land[(i, j)] = self.canvas.create_text(r * i + 3, r * j, anchor=NW, fill="white", text="2")
         self.creature = self.canvas.create_rectangle(r * self.x, r * self.y, r * (self.x + 1), r * (self.y + 1),
                                                      outline="red", fill="red")
+
         self.canvas.pack(fill=BOTH, expand=1)
         #Action
         movement = animation.Animation(self.root, self.canvas, self.creature, self.land)
